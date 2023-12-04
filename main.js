@@ -55,3 +55,50 @@ console.log(symb1, symb2);
 
 // Keyed collections are collection of data which are ordered by a key not an index.
 // Different types of keyed collections are Map, Set, WeakMap and WeakSet
+
+// Map
+// A Map holds key-value pairs where the keys can be any datatype (numbers, strings, booleans or even objects)
+// A Map remembers original insertion order of the keys unlike Objects.
+// There are two ways to create a Map.
+// 1. Passing an array to new Map()
+const laptops = new Map([
+  ["apple", 10],
+  ["lenovo", 5],
+  ["dell", 12],
+]);
+
+console.log(laptops.get("dell"));
+console.log(laptops.get("lenovo"));
+
+// 2. Creating a Map and using Map.set().
+const cars = new Map();
+
+cars.set("1", "Mustang");
+cars.set(1, "Range Rover");
+cars.set(2, "Hyundai");
+cars.set("2", "Toyota");
+
+console.log(cars.get("1"));
+console.log(cars.get(1));
+console.log(cars.get("2"));
+
+// overwrite an existing Map value
+cars.set(2, "Honda");
+console.log(cars.get(2));
+
+// check size of a Map
+console.log(cars.size);
+console.log(laptops.size);
+
+// Delete a Map element
+cars.delete(2);
+console.log(cars.has(2));
+
+// Remove all elements from a Map
+laptops.clear();
+console.log(laptops.size);
+
+// iterate over all Map elements
+cars.forEach((value, key) => {
+  console.log(`${key} = ${value}`);
+});
