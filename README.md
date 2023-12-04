@@ -1,4 +1,4 @@
-# Advanced Concepts of JavaaScript
+# Advanced Concepts of JavaScript
 
 -- Object Prototype 
 
