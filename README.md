@@ -1,6 +1,6 @@
 # Advanced Concepts of JavaScript
 
--- Object Prototype 
+-- Object Prototype
 
 -- Prototypal Inheritance
 
@@ -9,15 +9,5 @@
 -- Keyed Collections
 
 -- Map
-
--- Weak Map
-
--- Set
-
--- Weak Set
-
--- BitWise Operators
-
--- BigInt Operators
 
 -- IIFES

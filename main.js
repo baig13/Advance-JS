@@ -102,3 +102,9 @@ console.log(laptops.size);
 cars.forEach((value, key) => {
   console.log(`${key} = ${value}`);
 });
+
+// IIFES
+
+(function (date) {
+  console.log(`Advanced JavaScript Concepts here we go at ${date}.....`);
+})(new Date());
