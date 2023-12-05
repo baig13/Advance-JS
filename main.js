@@ -103,8 +103,105 @@ cars.forEach((value, key) => {
   console.log(`${key} = ${value}`);
 });
 
-// IIFES
+// Objects as keys
+const samsung = { name: "Samsung" };
+const oppo = { name: "Oppo" };
+const vivo = { name: "Vivo" };
 
+const mobiles = new Map();
+mobiles.set(samsung, 100);
+mobiles.set(vivo, 200);
+
+mobiles.forEach((value, key) => {
+  console.log(`${key}: ${value}`);
+});
+
+let obj = { a: 1, b: 2, c: 3, d: 4, e: 5 };
+// Convert object into Map
+const objectToMap = new Map(Object.entries(obj));
+
+objectToMap.forEach((value, key) => {
+  console.log(`${key}: ${value}`);
+});
+
+// Convert Map to Object
+const mapToObject = Object.fromEntries(objectToMap.entries());
+
+console.log(mapToObject);
+
+// Sets
+// 1st way to create set by passing an array to new Set()
+const set1 = new Set(["a", "b", "c"]);
+console.log(set1.size);
+
+// 2nd way to create set by adding values and variables using add() method
+const set2 = new Set();
+// add values to the set
+set2.add("Mubeen");
+set2.add("Hanan");
+set2.add("Affan");
+set2.add("Soban");
+console.log(set2.size);
+
+const var1 = 9;
+const var2 = 3;
+const var3 = 1;
+const var4 = 4;
+
+// add variables to the set
+set2.add(var1);
+set2.add(var2);
+set2.add(var3);
+set2.add(var4);
+
+console.log(set2);
+
+// Iterate over sets
+set2.forEach((value) => {
+  console.log(`${value}`);
+});
+
+// Weak Map
+const weakMap = new WeakMap();
+const weakObj = { id: 1 };
+const weakObj2 = { id: 2 };
+weakMap.set(weakObj, "Weak value 1");
+weakMap.set(weakObj2, "Weak value 2");
+console.log(weakMap);
+
+// Weak Set
+var x = new WeakSet();
+var y = new WeakSet(null);
+x.add({});
+x.add({});
+console.log(x);
+console.log(y);
+
+// BitWise Operators
+// AND Operator
+console.log(10 & 7);
+// OR Operator
+console.log(10 | 7);
+// XOR operator
+console.log(10 ^ 7);
+// NOT Operator
+console.log(~5);
+// Convert decimal to binary
+const decimalToBinary = (dec) => {
+  return (dec >>> 0).toString(2);
+};
+console.log(decimalToBinary(3));
+// Convert Binary to Decimal
+const binaryToDecimal = (bin) => {
+  return parseInt(bin, 2).toString(10);
+};
+console.log(binaryToDecimal(1111));
+
+// BigInt
+let bigValue = BigInt(3192381648316482136821638217368217361287361823682136);
+let bigValue2 = BigInt(3192381648316482136821638217368217361287361823682136);
+console.log(bigValue * bigValue2);
+// IIFES
 (function (date) {
   console.log(`Advanced JavaScript Concepts here we go at ${date}.....`);
 })(new Date());

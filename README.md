@@ -10,4 +10,14 @@
 
 -- Map
 
+-- Set
+
+-- Weak Map
+
+-- Weak Set
+
+-- BitWise Operators
+
+-- BigInt Operators
+
 -- IIFES
