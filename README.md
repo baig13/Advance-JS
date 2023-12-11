@@ -38,4 +38,6 @@
 
 -- Explicit Bindings (call, apply, bind)
 
+-- Iterators and Generators
+
 -- Common JS Modules and ECMA Scripts
