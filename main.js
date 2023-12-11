@@ -304,3 +304,42 @@ console.log(person2.fullName.call(member, "Lahore", "Pakistan"));
 // apply() is similar to call()
 // call() takes arguments separately whereas apply() takes arguments as an array
 console.log(person2.fullName.apply(member, ["Faisalabad", "Punjab"]));
+
+// Iterators
+let range = {
+  start: 0,
+  end: 5,
+  [Symbol.iterator]() {
+    let that = this;
+    let i = this.start;
+    return {
+      // iterator object
+      next: function () {
+        return { value: i, done: i++ > that.end };
+      },
+    };
+  },
+};
+
+let num = [1, 2, 3];
+let iterator = num[Symbol.iterator]();
+iterator.next();
+iterator.next();
+iterator.next();
+iterator.next();
+
+// Generators
+let range2 = {
+  start: 0,
+  end: 5,
+
+  *[Symbol.iterator]() {
+    for (let value = this.start; value <= this.end; value++) {
+      yield value;
+    }
+  },
+};
+
+for (let r of range2) {
+  console.log(r);
+}
