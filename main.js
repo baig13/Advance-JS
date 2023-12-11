@@ -284,8 +284,8 @@ console.log(checkNumber(13333));
 const person2 = {
   firstName: "Mubeen",
   lastName: "Baig",
-  fullName: function () {
-    return this.firstName + " " + this.lastName;
+  fullName: function (city, country) {
+    return this.firstName + " " + this.lastName + " " + city + " " + country;
   },
 };
 
@@ -294,5 +294,13 @@ const member = {
   lastName: "Baig",
 };
 
-let fullName = person2.fullName.bind(member);
+let fullName = person2.fullName.bind(member, "Lahore", "Pakistan");
 console.log(fullName());
+
+// Call() method
+// with call method we can write a method that can be used on different objects
+console.log(person2.fullName.call(member, "Lahore", "Pakistan"));
+
+// apply() is similar to call()
+// call() takes arguments separately whereas apply() takes arguments as an array
+console.log(person2.fullName.apply(member, ["Faisalabad", "Punjab"]));

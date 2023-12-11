@@ -36,4 +36,6 @@
 
 -- this keyword
 
+-- Explicit Bindings (call, apply, bind)
+
 -- Common JS Modules and ECMA Scripts
