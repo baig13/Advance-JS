@@ -21,3 +21,19 @@
 -- BigInt Operators
 
 -- IIFES
+
+-- Argument Objects
+
+-- Function Borrowing
+
+-- Recursion
+
+-- Lexical Scoping
+
+-- Closure
+
+-- Strict Mode
+
+-- this keyword
+
+-- Common JS Modules and ECMA Scripts

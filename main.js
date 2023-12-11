@@ -1,3 +1,4 @@
+"use strict";
 // Constructor functions
 
 const Car = function (name, model, color) {
@@ -205,3 +206,93 @@ console.log(bigValue * bigValue2);
 (function (date) {
   console.log(`Advanced JavaScript Concepts here we go at ${date}.....`);
 })(new Date());
+
+// Arguments Object
+// arguments object is not accessible withing arrow functions
+function sumAll() {
+  let sum = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    sum += arguments[i];
+  }
+  return sum;
+}
+
+console.log(sumAll(1, 123, 500, 115, 44, 88));
+
+// Lexical Scoping
+// Lexical environment is the local memory along with lexical environment of its parent
+function parent() {
+  var b = 10;
+  child();
+  function child() {
+    console.log(b);
+  }
+}
+parent();
+
+// Closures
+// Function along with its lexical scope
+// In other words, a closure gives access to its outer function's scope
+// from an inner function.
+
+// Closures are created everytime a function is created, at function creation time
+function clo() {
+  let a = 90;
+  return function cloInner() {
+    console.log(a);
+  };
+}
+
+let checkClo = clo();
+checkClo();
+
+// Strict Mode
+// "use strict" expression is used to indicate that code will be executed in the strict mode
+// in this file stric mode in enabled
+
+// this keyword
+const human = {
+  firstName: "Hanan",
+  lastName: "Baig",
+  fullName: function () {
+    return this.firstName + " " + this.lastName;
+  },
+};
+
+console.log(human.fullName());
+
+// Common JS Modules vs ECMA Scripts Modules
+// CommonJS uses the require() function to load modules, while ES modules use the import statement.
+// CommonJS modules use the module.exports object to export values,
+// while ES modules use the export keyword to export values.
+
+// Recursion
+
+// Recursion is a process of calling itself. A function that calls itself is called a recursive function.
+
+let checkNumber = (number) => {
+  if (number === 0) return number + " is even";
+  if (number === 1) return number + " is odd";
+  return checkNumber(number - 2);
+};
+console.log(checkNumber(10));
+console.log(checkNumber(13333));
+
+// Function Borrowing
+// With the bind() method, an object can borrow a method from another object.
+
+const person2 = {
+  firstName: "Mubeen",
+  lastName: "Baig",
+  fullName: function () {
+    return this.firstName + " " + this.lastName;
+  },
+};
+
+const member = {
+  firstName: "Hanan",
+  lastName: "Baig",
+};
+
+let fullName = person2.fullName.bind(member);
+console.log(fullName());
